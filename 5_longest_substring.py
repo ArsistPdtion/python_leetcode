@@ -24,14 +24,16 @@ class Solution:
                 if s[m] == s[n]:
                     m = m-1
                     n = n+1
+                    if n-m-1 > len(maxStr):
+                        maxStr = s[m+1:n]
                 else:
                     print("bu xiang deng1")
                     if n-m-1 > len(maxStr):
-                        maxStr = s[m+1:n]
-                        print(m+1)
-                        print(n-1)
+                        maxStr = s[m:n]
+                        print(m)
+                        print(n)
                         print("maxStr:",maxStr)
-                        print("s[]:",s[m+1:n-1])
+                        print("s[]:",s[m:n])
                     break
         return maxStr
 
